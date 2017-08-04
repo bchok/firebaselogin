@@ -28,6 +28,10 @@ btnSignUp.addEventListener('click', e => {
     promise.catch(e => console.log(e.message));
 });
 
+btnLogOut.addEventListener('click', e => {
+    firebase.auth().signOut();
+});
+
 //Authentication Listener
 firebase.auth().onAuthStateChanged(firebaseUser => {
     if(firebaseUser) {
@@ -36,5 +40,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         console.log('not logged in');
     }
 });
+
+
 
  
